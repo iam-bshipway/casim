@@ -22,7 +22,7 @@ USE mphys_parameters, ONLY: hydro_params
 ! modules aren't available.
 
 ! General atmosphere modules
-!USE conversions_mod,  ONLY: zerodegc
+!
 USE, INTRINSIC :: ISO_C_BINDING, ONLY:                   &
      C_DOUBLE
 ! This could be a parameter but should think about having a standardised
@@ -32,6 +32,7 @@ USE, INTRINSIC :: ISO_C_BINDING, ONLY:                   &
 USE yomhook,          ONLY: lhook, dr_hook
 USE parkind1,         ONLY: jprb, jpim
 
+USE conversions_mod,  ONLY: zerodegc
 USE vectlib_mod,      ONLY: powr_v, oneover_v, exp_v
 
 IMPLICIT NONE
@@ -41,7 +42,7 @@ INTEGER, PARAMETER :: real_64 = C_DOUBLE
 ! General atmosphere modules
 REAL(KIND=real_64), PARAMETER :: zerodegc            = 273.15_real_64
 #else
-USE conversions_mod,  ONLY: zerodegc
+
 #endif
 
 ! Purpose:
